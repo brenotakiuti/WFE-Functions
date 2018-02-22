@@ -25,7 +25,7 @@ A0 = DRL;
 
 % Solve the eigenvalue problem
 % [Phia,lama] = polyeig(A0,A1,A2);
-[Phia,lama,WR] = polyeig(A2,A1,A0);
+[Phia,lama,WR] = polyeig(A0,A1,A2);
 lama;
 
 kea = roundn((-log(lama)/L),-10);
