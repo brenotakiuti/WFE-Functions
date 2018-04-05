@@ -1,4 +1,4 @@
-function [ PhiQa_p,PhiQa_n,PhiFa_p,PhiFa_n,PsiQa_p,PsiFa_p,PsiQa_n,PsiFa_n,llRpa,llRna,sa,kpa,kna,Phiq,pureN] = PolySolve_complex4( w,Ka,Ma,La,nor,tol,lim,lim2)
+function [ PhiQa_p,PhiQa_n,PhiFa_p,PhiFa_n,PsiQa_p,PsiFa_p,PsiQa_n,PsiFa_n,llRpa,llRna,sa,kpa,kna,Phiq,pureN] = PolySolve_complex( w,Ka,Ma,La,nor,tol,lim,lim2)
 %% Using fan2016 as reference
 %23/10/2017
 % lim: used in pi/lim to calculate the tolerance to distinguish pure real
@@ -112,7 +112,7 @@ end
     s2 = s1;
     for ii = 1:length(sa)
 
-        if (abs(real(sa(ii)*La))<pi/lim&&abs(imag(sa(ii)*La))<pi/lim)
+        if (abs(real(sa(ii)*La))<pi/lim && abs(imag(sa(ii)*La))<pi/lim)
             % Separate the numbers lower than pi over something
             if (abs(real(sa(ii)))>tol2 && abs(imag(sa(ii)))<tol2) || (abs(real(sa(ii)))<tol2 && abs(imag(sa(ii)))>tol2)
                 % Separate pure real and pure imag and put then in the
@@ -136,7 +136,7 @@ end
     % Remove the sorted number, retain only the complex (including errors)
     s5 = s2;
     s5(1:nSort,:) = [];
-    
+
 %     %% Take only the first smallest COMPLEX mode
 %     
 %     orderV = [];

@@ -10,7 +10,8 @@ for ii = 1:na
         PR(jj,ii)=abs(TRT(jj,ii))^2*(Pa(na+jj,na+jj)/Pa(ii,ii));
     end
 end
-for ii = 1:nb
+
+for ii = 1:na
     for jj = 1:nb
         PT(jj,ii)=abs(TRT(na+jj,ii))^2*(Pb(jj,jj)/Pa(ii,ii));
     end
